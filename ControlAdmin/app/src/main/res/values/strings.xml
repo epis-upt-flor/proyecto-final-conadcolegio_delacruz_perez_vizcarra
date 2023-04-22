@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ControlAdmin</string>
+    <string name="nombre">ControlAdmin</string>
+    <string name="apellidos">ControlAdmin</string>
+    <string name="DNI">ControlAdmin</string>
+    <string name="cargo">ControlAdmin</string>
+    <string name="edad">ControlAdmin</string>
+    <string name="telefono">ControlAdmin</string>
+</resources>
