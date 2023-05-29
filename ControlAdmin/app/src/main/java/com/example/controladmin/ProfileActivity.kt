@@ -33,8 +33,12 @@ class ProfileActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContent {
             ControlAdminTheme() {
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    ProfileScreen(personalAdmin, context = baseContext)
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background) {
+                    ProfileScreen(
+                        personalAdmin,
+                        context = baseContext)
                 }
             }
         }

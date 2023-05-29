@@ -17,12 +17,29 @@ import coil.compose.AsyncImage
 
 @Composable
 fun StaffListItem(personalAdmin: PersonalAdmin, navigateToProfile: (PersonalAdmin) -> Unit){
-    Card(modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 8.dp), shape= RoundedCornerShape(corner = CornerSize(16.dp))) {
-        Row(Modifier.clickable { navigateToProfile(personalAdmin) }){
+    TypeStaffListItem(personalAdmin,navigateToProfile)
+}
+
+@Composable
+fun TypeStaffListItem(personalAdmin: PersonalAdmin, navigateToProfile: (PersonalAdmin) -> Unit){
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(
+            horizontal = 8.dp,
+            vertical = 8.dp),
+        shape= RoundedCornerShape(
+            corner = CornerSize(16.dp))) {
+        Row(Modifier.clickable {
+            navigateToProfile(personalAdmin)
+        }){
             StaffImage(personalAdmin)
-            Column(modifier = Modifier.padding(16.dp).fillMaxWidth().align(Alignment.CenterVertically)) {
-                Text(text = personalAdmin.nombre, style = MaterialTheme.typography.h6)
-                Text(text = "REVISAR PERFIL", style= MaterialTheme.typography.caption)
+            Column(
+                modifier = Modifier.padding(16.dp).fillMaxWidth().align(Alignment.CenterVertically)) {
+                Text(
+                    text = personalAdmin.nombre,
+                    style = MaterialTheme.typography.h6)
+                Text(
+                    text = "REVISAR PERFIL",
+                    style= MaterialTheme.typography.caption)
             }
         }
     }
@@ -31,5 +48,10 @@ fun StaffListItem(personalAdmin: PersonalAdmin, navigateToProfile: (PersonalAdmi
 
 @Composable
 fun StaffImage(personalAdmin: PersonalAdmin){
-    AsyncImage(model = personalAdmin.foto,contentDescription = personalAdmin.nombre,contentScale = ContentScale.Crop, modifier = Modifier.padding(8.dp).size(84.dp).clip(RoundedCornerShape(corner = CornerSize(16.dp))))
+    AsyncImage(
+        model = personalAdmin.foto,
+        contentDescription = personalAdmin.nombre,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.padding(8.dp).size(84.dp).clip(RoundedCornerShape(
+            corner = CornerSize(16.dp))))
 }

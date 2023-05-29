@@ -1,7 +1,7 @@
 package com.example.controladmin
 
 object DataProvider {
-    val personalList = listOf(
+    val direccionList = listOf(
         PersonalAdmin(
             ID_PersonalAdmin = 1,
             nombre = "DirectorName",
@@ -21,10 +21,12 @@ object DataProvider {
             edad = 47,
             telefono = "923923923",
             foto = com.example.controladmin.R.drawable.subdirector_logo
-        ),
+        )
+    )
+    val secretariaList = listOf(
         PersonalAdmin(
             ID_PersonalAdmin = 3,
-            nombre = "Secretario1",
+            nombre = "NEWSecretario1",
             apellidos = "Secretario1LastName",
             cargo = "Secretario",
             DNI = "12345678",
@@ -34,7 +36,7 @@ object DataProvider {
         ),
         PersonalAdmin(
             ID_PersonalAdmin = 4,
-            nombre = "Secretario2",
+            nombre = "NEWSecretario2",
             apellidos = "Secretario2LastName",
             cargo = "Secretario",
             DNI = "12345678",
@@ -44,14 +46,16 @@ object DataProvider {
         ),
         PersonalAdmin(
             ID_PersonalAdmin = 5,
-            nombre = "Secretario3",
+            nombre = "NEWSecretario3",
             apellidos = "Secretario3LastName",
             cargo = "Secretario",
             DNI = "12345678",
             edad = 35,
             telefono = "923923923",
             foto = com.example.controladmin.R.drawable.secretario3_logo
-        ),
+        )
+    )
+    val docenciaList = listOf(
         PersonalAdmin(
             ID_PersonalAdmin = 6,
             nombre = "Profe1",

@@ -22,7 +22,10 @@ fun ProfileScreen(personalAdmin: PersonalAdmin, context: Context) {
         BoxWithConstraints {
             Surface {
                 Column(modifier = Modifier.fillMaxSize().verticalScroll(scrollState)) {
-                    ProfileHeader(personalAdmin = personalAdmin, containerHeight = this@BoxWithConstraints.maxHeight,personalAdmin.foto)
+                    ProfileHeader(
+                        personalAdmin = personalAdmin,
+                        containerHeight = this@BoxWithConstraints.maxHeight,
+                        personalAdmin.foto)
                     Nombre(personalAdmin = personalAdmin)
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.nombre), value = personalAdmin.nombre)
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.apellidos), value = personalAdmin.apellidos)
@@ -30,7 +33,7 @@ fun ProfileScreen(personalAdmin: PersonalAdmin, context: Context) {
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.cargo), value = personalAdmin.cargo)
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.edad), value = personalAdmin.edad.toString())
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.telefono), value = personalAdmin.telefono)
-                    Btn(title = "Llamar al perfil", context,personalAdmin.telefono)
+                    Btn_Llamar(title = "Llamar al perfil", context,personalAdmin.telefono)
                     Spacer(Modifier.height((this@BoxWithConstraints.maxHeight-320.dp).coerceAtLeast(0.dp)))
                 }
             }
@@ -65,7 +68,7 @@ fun ProfileProperty(label:String,value:String){
 }
 
 @Composable
-fun Btn(title: String, context: Context,numero:String){
+fun Btn_Llamar(title: String, context: Context,numero:String){
     Button(onClick = {
         Operacion.onCall(context,numero)
     },

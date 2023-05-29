@@ -6,8 +6,11 @@ import androidx.compose.runtime.Composable
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun MyApp(navigateToProfile:(PersonalAdmin) -> Unit){
-    Scaffold( content = {
-        ColegioRAStaff(navigateToProfile)
-    })
+fun MyApp(navigateToProfile:(PersonalAdmin) -> Unit)
+{
+    Scaffold(
+        content = {
+            ColegioRAStaff(navigateToProfile)
+        }
+    )
 }
