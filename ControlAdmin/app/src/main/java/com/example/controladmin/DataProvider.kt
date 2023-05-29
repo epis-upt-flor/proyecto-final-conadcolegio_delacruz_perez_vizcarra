@@ -26,17 +26,17 @@ object DataProvider {
     val secretariaList = listOf(
         PersonalAdmin(
             ID_PersonalAdmin = 3,
-            nombre = "NEWSecretario1",
-            apellidos = "Secretario1LastName",
+            nombre = "Juan Jose",
+            apellidos = "Perez Vizcarra",
             cargo = "Secretario",
             DNI = "12345678",
             edad = 37,
-            telefono = "923923923",
+            telefono = "+51 996 062 122",
             foto = com.example.controladmin.R.drawable.secretario1_logo
         ),
         PersonalAdmin(
             ID_PersonalAdmin = 4,
-            nombre = "NEWSecretario2",
+            nombre = "Secretario2",
             apellidos = "Secretario2LastName",
             cargo = "Secretario",
             DNI = "12345678",
@@ -46,7 +46,7 @@ object DataProvider {
         ),
         PersonalAdmin(
             ID_PersonalAdmin = 5,
-            nombre = "NEWSecretario3",
+            nombre = "Secretario3",
             apellidos = "Secretario3LastName",
             cargo = "Secretario",
             DNI = "12345678",

@@ -34,6 +34,7 @@ fun ProfileScreen(personalAdmin: PersonalAdmin, context: Context) {
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.edad), value = personalAdmin.edad.toString())
                     ProfileProperty(label = stringResource(id = com.example.controladmin.R.string.telefono), value = personalAdmin.telefono)
                     Btn_Llamar(title = "Llamar al perfil", context,personalAdmin.telefono)
+                    Btn_WhA(title = "WhatsApp al perfil", context,personalAdmin.telefono)
                     Spacer(Modifier.height((this@BoxWithConstraints.maxHeight-320.dp).coerceAtLeast(0.dp)))
                 }
             }
@@ -70,7 +71,18 @@ fun ProfileProperty(label:String,value:String){
 @Composable
 fun Btn_Llamar(title: String, context: Context,numero:String){
     Button(onClick = {
-        Operacion.onCall(context,numero)
+        Operaciones.llamarContacto(context,numero)
+    },
+        modifier = Modifier.fillMaxWidth().padding(10.dp)
+    ) {
+        Text(title)
+    }
+}
+
+@Composable
+fun Btn_WhA(title: String, context: Context,numero:String){
+    Button(onClick = {
+        Operaciones.onWhatsApp(context,numero)
     },
         modifier = Modifier.fillMaxWidth().padding(10.dp)
     ) {
