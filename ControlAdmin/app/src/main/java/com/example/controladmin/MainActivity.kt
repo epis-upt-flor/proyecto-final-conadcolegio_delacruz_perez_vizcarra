@@ -15,6 +15,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,6 +32,7 @@ import com.example.controladmin.navigation.Destination
 import com.example.controladmin.presentation.personal_detail.PersonalDetailScreen
 import com.example.controladmin.presentation.personal_detail.PersonalDetailViewModel
 import com.example.controladmin.presentation.personal_list.PersonalListScreen
+import com.example.controladmin.presentation.personal_list.components.PersonalListViewModel
 import com.example.controladmin.presentation.profile.ProfileScreen
 import com.example.controladmin.presentation.sign_in.GoogleAuthUiClient
 import com.example.controladmin.presentation.sign_in.SignInScreen
@@ -150,12 +152,17 @@ fun NavGraphBuilder.addPersonalList(
     composable(
         route = Destination.PersonalList.route
     ){
+        val viewModel: PersonalListViewModel = hiltViewModel()
+        val state = viewModel.state.value
+        val isRefreshing = viewModel.isRefreshing.collectAsState()
+
         PersonalListScreen(
+            state = state,
             navigateToPersonalDetail = {
                 navController.navigate(Destination.PersonalDetail.route)
             },
-            isRefreshing = false,
-            refreshData = {}
+            isRefreshing = isRefreshing.value,
+            refreshData = viewModel::getPersonalList
         )
     }
 }

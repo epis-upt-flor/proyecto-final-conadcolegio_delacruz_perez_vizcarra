@@ -19,5 +19,5 @@ object AppModule {
     @Singleton
     fun providePersonalList(
         firestore: FirebaseFirestore
-    ) = firestore.collection("books")
+    ) = firestore.collection("Personal")
 }

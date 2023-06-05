@@ -28,11 +28,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
+import com.example.controladmin.model.Personal
 import com.example.controladmin.ui.theme.Red100
 import com.example.controladmin.ui.theme.Yellow600
 
 @Composable
-fun PersonalListItem() {
+fun PersonalListItem(
+    personal: Personal
+) {
     Card(
         elevation = 0.dp
     ){
@@ -45,7 +48,7 @@ fun PersonalListItem() {
                 }
         ){
             Image(
-                painter = rememberImagePainter(""),
+                painter = rememberImagePainter(personal.foto),
                 contentDescription = "",
                 modifier = Modifier
                     .width(100.dp)
@@ -61,7 +64,7 @@ fun PersonalListItem() {
             ) {
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "Title",
+                    text = personal.nombre,
                     style = TextStyle(
                         fontWeight = FontWeight.Medium,
                         fontSize = 18.sp
@@ -70,7 +73,7 @@ fun PersonalListItem() {
 
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "Author",
+                    text = personal.apellidos,
                     style = TextStyle(
                         fontWeight = FontWeight.Light,
                         fontSize = 14.sp,
@@ -91,7 +94,7 @@ fun PersonalListItem() {
                     )
 
                     Text(
-                        text = "4.5",
+                        text = personal.cargo,
                         style = TextStyle(
                             color = Color.Black,
                             fontWeight = FontWeight.Black,
@@ -100,7 +103,7 @@ fun PersonalListItem() {
                     )
 
                     Text(
-                        text = "0 Descargas",
+                        text = personal.telefono,
                         style = TextStyle(
                             color = Color.Black,
                             fontWeight = FontWeight.Light,
@@ -117,7 +120,7 @@ fun PersonalListItem() {
                     )
                 ) {
                     Text(
-                        text = "Descargar",
+                        text = "Revisar Perfil",
                         color = Color.White
                     )
                 }
