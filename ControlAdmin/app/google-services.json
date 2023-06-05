@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433087587477",
+    "project_id": "controladmin-41f13",
+    "storage_bucket": "controladmin-41f13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433087587477:android:96c21b6f2b4abd55e8679c",
+        "android_client_info": {
+          "package_name": "com.example.controladmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeSlYCsgKSjm_SxEv-eBg2MyKC_fJhZvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
