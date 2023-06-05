@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.controladmin.ui.theme.Red100
+import com.example.controladmin.ui.theme.Purple700
 
 @Composable
 fun PersonalDetailScreen(
@@ -116,11 +116,11 @@ fun PersonalDetailScreen(
                     addNewPersonal(nombre,apellidos,dni,cargo,telefono)
                 },
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Red100
+                    backgroundColor = Purple700
                 )
             ) {
                 Text(
-                    text = "Add New Personal",
+                    text = "Anadir Personal",
                     color = Color.White
                 )
             }

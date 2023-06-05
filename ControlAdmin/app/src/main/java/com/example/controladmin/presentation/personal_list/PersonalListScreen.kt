@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.example.controladmin.presentation.personal_list.components.PersonalList
 import com.example.controladmin.presentation.personal_list.components.PersonalListState
-import com.example.controladmin.ui.theme.Red100
+import com.example.controladmin.ui.theme.Purple700
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -27,7 +27,7 @@ fun PersonalListScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = navigateToPersonalDetail,
-                backgroundColor = Red100,
+                backgroundColor = Purple700,
                 contentColor = Color.White
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add Icon")

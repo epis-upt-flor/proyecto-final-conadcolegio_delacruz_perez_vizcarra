@@ -1,9 +1,11 @@
 package com.example.controladmin.presentation.profile
 
 import android.content.Context
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -23,6 +25,8 @@ import com.example.controladmin.Operaciones
 import com.example.controladmin.PersonalAdmin
 import com.example.controladmin.R
 import com.example.controladmin.presentation.sign_in.UserData
+import com.example.controladmin.ui.theme.Celeste
+import com.example.controladmin.ui.theme.Purple500
 
 @Composable
 fun ProfileScreen(userData: UserData?, onSignOut: () -> Unit, checkPersonal: () -> Unit) {
@@ -34,7 +38,7 @@ fun ProfileScreen(userData: UserData?, onSignOut: () -> Unit, checkPersonal: () 
         if(userData?.profilePictureUrl != null) {
             AsyncImage(
                 model = userData.profilePictureUrl,
-                contentDescription = "Profile picture",
+                contentDescription = "Foto de perfil",
                 modifier = Modifier
                     .size(150.dp)
                     .clip(CircleShape),
@@ -47,16 +51,22 @@ fun ProfileScreen(userData: UserData?, onSignOut: () -> Unit, checkPersonal: () 
                 text = userData.username,
                 textAlign = TextAlign.Center,
                 fontSize = 36.sp,
-                fontWeight = FontWeight.SemiBold
+                fontWeight = FontWeight.Medium
             )
             Spacer(modifier = Modifier.height(16.dp))
         }
-        Button(onClick = onSignOut) {
-            Text(text = "Sign out")
-        }
-        Button(onClick = checkPersonal) {
+        Button(onClick = checkPersonal,
+            colors = ButtonDefaults.buttonColors(backgroundColor = Celeste)
+        ) {
             Text(text = "Ver Personal")
         }
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = onSignOut,
+            colors = ButtonDefaults.buttonColors(backgroundColor = Celeste)
+        ) {
+            Text(text = "Cerrar sesion")
+        }
+
     }
 
     //-----------------------------------
